@@ -1,0 +1,446 @@
+﻿@{
+    ViewData["Title"] = "About Me";
+}
+
+<div class="about-wrapper">
+    <!-- YOUR ORIGINAL ABOUT ME CARD (UNTOUCHED) -->
+    <div class="about-card">
+        <!-- Header -->
+        <header class="about-header">
+            <img src="~/images/about_me.jpg" 
+                 alt="Emma-Rose Clow" 
+                 class="avatar-image" />
+            <h1 class="about-title">About Me</h1>
+            <p class="about-subtitle">Student Profile & Course Expectations</p>
+        </header>
+
+        <hr class="divider" />
+
+        <!-- Student Info Section -->
+        <section class="info-grid">
+            <div class="info-card">
+                <span class="info-label">Full Name</span>
+                <span class="info-value">Emma-Rose Clow</span> <!-- Replace with your name -->
+            </div>
+            <div class="info-card">
+                <span class="info-label">Student ID</span>
+                <span class="info-value">041176907</span> <!-- Replace with your student ID -->
+            </div>
+            <div class="info-card info-card-full">
+                <span class="info-label">Student Email</span>
+                <span class="info-value">
+                    clow0029&#64;algonquinlive&#46;com <!-- Replace/mask domain as needed -->
+                </span>
+            </div>
+        </section>
+
+        <!-- Paragraphs Section -->
+        <section class="about-section">
+            <h2 class="section-title">A Bit About Me</h2>
+            <p class="bio-text">
+                Hello! I am a passionate computing science student who loves exploring software engineering, 
+                clean code architecture, and modern web application development.
+            </p>
+        </section>
+
+        <section class="about-section">
+            <h2 class="section-title">Course Expectations & Goals</h2>
+            <p class="bio-text">
+                In this course, I expect to build a strong foundation in full-stack web architecture using 
+                <strong>ASP.NET Core MVC</strong>.
+            </p>
+        </section>
+    </div>
+
+    <!-- QUESTIONS AND ANSWERS SECTION -->
+    <div class="about-card qa-card">
+        <h2 class="qa-main-title">📝 C# & ASP.NET Core MVC Questions</h2>
+        <p class="bio-text">Course concepts and framework design pattern review.</p>
+        
+        <hr class="divider" />
+
+        <div class="qa-list">
+
+            <!-- Question 1 -->
+            <div class="qa-item">
+                <h3 class="qa-question">
+                    <span class="q-number">1</span>
+                    Is C# a strongly or loosely typed language? Why?
+                </h3>
+                <p class="qa-answer">
+                    C# is a <strong>strongly typed</strong> (and statically typed) language. Every variable, constant, and expression must have a defined type at compile time. The C# compiler enforces strict type safety, verifying valid operations before execution and preventing illegal type conversions (for example, attempting to assign a text string directly into an integer variable will produce a compile-time error).
+                </p>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="qa-item">
+                <h3 class="qa-question">
+                    <span class="q-number">2</span>
+                    Is C# declarative or imperative? Why?
+                </h3>
+                <p class="qa-answer">
+                    C# is primarily an <strong>imperative</strong> language, but it is multi-paradigm and strongly supports <strong>declarative</strong> programming:
+                    <br />• <strong>Imperative:</strong> Traditional C# code specifies explicit, step-by-step instructions on <em>how</em> to execute logic using statements like <code>for</code> loops, <code>while</code> loops, and <code>if-else</code> branches.
+                    <br />• <strong>Declarative:</strong> Features such as <strong>LINQ</strong>, attributes (e.g., <code>[HttpGet]</code>), and lambda expressions allow developers to state <em>what</em> result is wanted rather than detailing the low-level execution steps.
+                </p>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="qa-item">
+                <h3 class="qa-question">
+                    <span class="q-number">3</span>
+                    Explain anonymous types in C#, why we use them, and give an example.
+                </h3>
+                <p class="qa-answer">
+                    An <strong>anonymous type</strong> provides a quick way to encapsulate a set of read-only properties into a single object without having to explicitly declare a separate class file. The compiler automatically creates an internal class type behind the scenes.
+                    <br /><br />
+                    <strong>Why we use them:</strong> They are heavily used with LINQ projection queries to shape, transform, or group temporary subsets of data without cluttering the project with one-off DTO classes.
+                    <pre><code>// Example:
+var student = new { Name = "Emma-Rose", StudentId = "041176907", Active = true };
+Console.WriteLine(student.Name);</code></pre>
+                </p>
+            </div>
+
+            <!-- Question 4 (DYNAMIC FROM CONTROLLER) -->
+            <div class="qa-item">
+                <h3 class="qa-question">
+                    <span class="q-number">4</span>
+                    What is the difference between a Value Type and a Reference type?
+                    <span class="controller-badge">From Controller</span>
+                </h3>
+                <p class="qa-answer">
+                    @ViewBag.Answer4
+                </p>
+            </div>
+
+            <!-- Question 5 (DYNAMIC FROM CONTROLLER) -->
+            <div class="qa-item">
+                <h3 class="qa-question">
+                    <span class="q-number">5</span>
+                    What is a ‘Property’ in C# as it relates to classes and objects?
+                    <span class="controller-badge">From Controller</span>
+                </h3>
+                <p class="qa-answer">
+                    @ViewBag.Answer5
+                </p>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="qa-item">
+                <h3 class="qa-question">
+                    <span class="q-number">6</span>
+                    Describe the MVC design pattern. Explain its components.
+                </h3>
+                <p class="qa-answer">
+                    <strong>MVC (Model-View-Controller)</strong> is an architectural pattern that separates an application into three distinct components:
+                    <br />• <strong>Model:</strong> Represents the domain data, state, and business/validation rules.
+                    <br />• <strong>View:</strong> The user interface layer (such as Razor <code>.cshtml</code> files) that renders and displays data to the user.
+                    <br />• <strong>Controller:</strong> Handles incoming HTTP requests, coordinates business logic with services and the Model, and selects the appropriate View to render as the HTTP response.
+                </p>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="qa-item">
+                <h3 class="qa-question">
+                    <span class="q-number">7</span>
+                    Describe the purpose of the Program.cs class in this project.
+                </h3>
+                <p class="qa-answer">
+                    In ASP.NET Core, <code>Program.cs</code> serves as the application's entry point. It has two essential roles:
+                    <br />1. <strong>Service Registration (Dependency Injection):</strong> Configures required services in the IoC container via <code>builder.Services</code> (e.g., MVC controllers, views, database contexts).
+                    <br />2. <strong>Middleware Pipeline:</strong> Configures the HTTP request processing pipeline via <code>app.Use...</code> (e.g., routing, static files, authentication) and maps controller routes before starting the web server.
+                </p>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="qa-item">
+                <h3 class="qa-question">
+                    <span class="q-number">8</span>
+                    MVC Core applications can ‘host’ themselves: true or false.
+                </h3>
+                <p class="qa-answer">
+                    <strong>True.</strong> ASP.NET Core applications are self-contained console applications that run their own in-process, cross-platform web server (primarily <strong>Kestrel</strong>). They do not strictly depend on an external web server like IIS or Apache to run and serve HTTP requests.
+                </p>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="qa-item">
+                <h3 class="qa-question">
+                    <span class="q-number">9</span>
+                    Explain what happens in memory when we make a value type nullable.
+                </h3>
+                <p class="qa-answer">
+                    In C#, a nullable value type like <code>int?</code> is syntactic sugar for the generic structure <code>System.Nullable&lt;T&gt;</code>. Because it is a struct, it remains a <strong>value type</strong> on the stack rather than a heap-allocated reference object. In memory, it allocates the underlying value plus an additional <code>bool</code> flag (<code>hasValue</code>). With memory alignment padding, an <code>int?</code> typically takes 8 bytes instead of 4. When assigned <code>null</code>, the <code>hasValue</code> flag is set to <code>false</code>.
+                </p>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="qa-item">
+                <h3 class="qa-question">
+                    <span class="q-number">10</span>
+                    Explain implicit types and why we use them and give an example.
+                </h3>
+                <p class="qa-answer">
+                    <strong>Implicit typing</strong> uses the <code>var</code> keyword to let the compiler determine the variable's type based on the initialization expression on the right-hand side. The variable remains strongly typed at compile time.
+                    <br /><br />
+                    <strong>Why we use them:</strong> It eliminates redundant type boilerplate (e.g., with long generic collections), makes code cleaner, and is <em>required</em> when working with anonymous types where the type has no explicit name.
+                    <pre><code>// Example:
+var message = "Welcome to ASP.NET Core!"; // Inferred as string
+var numbers = new List&lt;int&gt;();             // Inferred as List&lt;int&gt;</code></pre>
+                </p>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="qa-item">
+                <h3 class="qa-question">
+                    <span class="q-number">11</span>
+                    Explain Git flow and why we use it.
+                </h3>
+                <p class="qa-answer">
+                    <strong>Git Flow</strong> is a branching strategy for Git that organizes collaborative development through standardized branch roles:
+                    <br />• <code>main</code>: Stores official production release history.
+                    <br />• <code>develop</code>: Serves as an integration branch for newly completed features.
+                    <br />• <code>feature/*</code>: Isolated branches for building specific capabilities.
+                    <br />• <code>release/*</code>: Branches for preparing, polishing, and testing new releases.
+                    <br />• <code>hotfix/*</code>: Urgent patches branched directly from <code>main</code>.
+                    <br /><br />
+                    <strong>Why we use it:</strong> It prevents broken work-in-progress code from contaminating production, simplifies parallel development across multiple developers, and facilitates clean, predictable software release cycles.
+                </p>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="qa-item">
+                <h3 class="qa-question">
+                    <span class="q-number">12</span>
+                    Explain dependency injection and why we use it?
+                </h3>
+                <p class="qa-answer">
+                    <strong>Dependency Injection (DI)</strong> is a design pattern achieving Inversion of Control (IoC) where a class receives its dependencies from an external container (typically via its constructor) rather than creating them directly with <code>new</code>.
+                    <br /><br />
+                    <strong>Why we use it:</strong>
+                    <br />• <strong>Loose Coupling:</strong> Components depend on interfaces rather than concrete implementations.
+                    <br />• <strong>Testability:</strong> Makes automated unit testing straightforward by allowing real services to be replaced with mock objects.
+                    <br />• <strong>Maintainability:</strong> Service configurations and lifecycles (Transient, Scoped, Singleton) are managed centrally in <code>Program.cs</code>.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Scoped Styles for About Me */
+    .about-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 2.5rem 1rem;
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    .about-card {
+        background: #ffffff;
+        max-width: 720px;
+        width: 100%;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        border: 1px solid #eef2f6;
+        padding: 2.5rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        box-sizing: border-box;
+    }
+
+    .about-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .avatar-image {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #0d6efd;
+        box-shadow: 0 4px 14px rgba(13, 110, 253, 0.25);
+        margin-bottom: 0.75rem;
+    }
+
+    .about-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1a202c;
+        margin: 0;
+    }
+
+    .about-subtitle {
+        color: #718096;
+        font-size: 0.95rem;
+        margin-top: 0.35rem;
+    }
+
+    .divider {
+        border: 0;
+        height: 1px;
+        background: #e2e8f0;
+        margin: 1.5rem 0;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .info-card {
+        background: #f8fafc;
+        border-left: 4px solid #0d6efd;
+        border-radius: 8px;
+        padding: 1rem 1.25rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info-card-full {
+        grid-column: 1 / -1;
+    }
+
+    .info-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-weight: 600;
+        color: #64748b;
+        margin-bottom: 0.25rem;
+    }
+
+    .info-value {
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: #1e293b;
+    }
+
+    .about-section {
+        margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #2d3748;
+        position: relative;
+        padding-bottom: 0.4rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 36px;
+        height: 3px;
+        background: #0d6efd;
+        border-radius: 2px;
+    }
+
+    .bio-text {
+        color: #4a5568;
+        line-height: 1.7;
+        font-size: 0.98rem;
+        margin: 0;
+    }
+
+    /* Styles for Questions & Answers */
+    .qa-main-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1a202c;
+        margin-top: 0;
+        margin-bottom: 0.4rem;
+    }
+
+    .qa-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.3rem;
+        margin-top: 1.5rem;
+    }
+
+    .qa-item {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 1.2rem 1.4rem;
+    }
+
+    .qa-question {
+        font-size: 1.02rem;
+        font-weight: 600;
+        color: #0d6efd;
+        margin: 0 0 0.6rem 0;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .q-number {
+        background: #0d6efd;
+        color: white;
+        font-size: 0.75rem;
+        font-weight: 700;
+        border-radius: 5px;
+        padding: 2px 7px;
+        margin-top: 2px;
+    }
+
+    .controller-badge {
+        background: #198754;
+        color: #ffffff;
+        font-size: 0.65rem;
+        font-weight: 600;
+        padding: 2px 7px;
+        border-radius: 10px;
+        margin-left: auto;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+
+    .qa-answer {
+        color: #334155;
+        line-height: 1.65;
+        font-size: 0.95rem;
+        margin: 0;
+    }
+
+    .qa-answer strong {
+        color: #0f172a;
+    }
+
+    pre code {
+        display: block;
+        background: #1e293b;
+        color: #f8fafc;
+        padding: 0.75rem 1rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-family: Consolas, Monaco, monospace;
+        overflow-x: auto;
+        margin-top: 0.6rem;
+    }
+
+    @@media (max-width: 576px) {
+        .about-card {
+            padding: 1.5rem;
+        }
+
+        .info-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .controller-badge {
+            display: none;
+        }
+    }
+</style>
